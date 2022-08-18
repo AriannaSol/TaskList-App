@@ -1,0 +1,176 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Fira sans', sans-serif;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: #374151;
+    color: #FFF;
+}
+
+header{
+    padding: 2rem 1rem;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+h1{
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+    color: #6B7280;
+}
+
+#new-task-form{
+    display: flex;
+}
+
+#new-task-input{
+    background-color: #1F2937;
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-right: 1rem;
+    border:none;
+    color: #EEE;
+    font-size: 1.25rem;
+    flex: 1 1 0%;
+}
+
+#new-task-input::placeholder{
+    color: #6B7280;
+}
+
+#new-task-submit{
+    color: #EC4899;
+    font-size: 1.25rem;
+    font-weight: 700;
+    background-image: linear-gradient(to right, #EC4899, #8B5Cf6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    transition: 0.4s;
+}
+
+#new-task-submit:hover{
+    opacity: 0.8;
+}
+
+#new-task-submit:active{
+    opacity: 0.6;
+}
+
+main{
+    flex: 1 1 0%;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.task-list{
+    padding: 1rem;
+}
+
+h2{
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: #6B7280;
+    margin-bottom: 1rem;
+}
+
+.task{
+    display: flex;
+    justify-content: space-between;
+    background-color: #111827;
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+}
+
+.text{
+    background: none; 
+    border: none;
+    color:#FFF;
+    font-size: 1.125rem;
+    width: 100%;
+    display: block;
+    transition: 0.4s;
+}
+
+.text:not(:read-only){
+    color: #EC4899;
+}
+
+.content{
+    flex: 1 1 0%;
+}
+
+.actions{
+    display: flex;
+
+}
+
+.edit,
+.delete{
+    cursor: pointer;
+    border: none;
+    background: none;
+    margin-right: 15px;
+    font-size: 1.125rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: 0.4s;
+}
+
+button:hover{
+    opacity: 0.8;
+}
+
+button:active{
+    opacity: 0.6;
+}
+.edit{
+    background-image: linear-gradient(to right, #EC4899, #8B5Cf6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.delete{
+    color: #EC4899;
+}
+
+@media screen and (max-width: 450px) {
+
+    #new-task-form{
+        flex-direction: column;
+    }
+
+    #new-task-submit{
+        margin-top: 8px;
+    }
+
+    #new-task-input{
+        font-size: 1rem;
+    }
+
+    .delete,
+    .edit{
+        font-size: 0.8rem;
+        margin-right:0;
+        margin-top: 5px;
+    }
+
+    .actions{
+        display: flex;
+        justify-content: center;
+    }
+
+    .task{
+        flex-direction: column;
+    }
+}
